@@ -1,5 +1,3 @@
-// #![feature(const_socketaddr)]
-
 use std::{
   net::{IpAddr, Ipv4Addr, SocketAddrV4, TcpStream},
   time::Duration,
