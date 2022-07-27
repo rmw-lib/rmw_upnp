@@ -82,11 +82,11 @@ impl Watch for Log {
   }
 }
 
-pub async fn rmw_upnp(name: &str, port: u16, sleep_seconds: u32) {
-  rmw_upnp_watch(name, port, sleep_seconds, Log).await;
+pub async fn daemon(name: &str, port: u16, sleep_seconds: u32) {
+  daemon_watch(name, port, sleep_seconds, Log).await;
 }
 
-pub async fn rmw_upnp_watch(name: &str, port: u16, sleep_seconds: u32, watch: impl Watch) {
+pub async fn daemon_watch(name: &str, port: u16, sleep_seconds: u32, watch: impl Watch) {
   let mut local_ip = Ipv4Addr::UNSPECIFIED;
   let mut pre_gateway = SocketAddrV4::new(local_ip, 0);
   let seconds = Duration::from_secs(sleep_seconds.into());

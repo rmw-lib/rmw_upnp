@@ -21,7 +21,7 @@ rmw_upnp : upnp port map daemon
 
 ```rust
 use anyhow::Result;
-use rmw_upnp::rmw_upnp;
+use rmw_upnp::daemon;
 
 #[async_std::main]
 async fn main() -> Result<()> {
@@ -33,7 +33,7 @@ async fn main() -> Result<()> {
 
   let sleep_seconds = 60;
   let port = 12345;
-  rmw_upnp("test_rmw_upnp", port, sleep_seconds).await;
+  daemon("test_rmw_upnp", port, sleep_seconds).await;
   Ok(())
 }
 ```
@@ -59,7 +59,7 @@ rmw_upnp : upnp 守护进程
 
 ```rust
 use anyhow::Result;
-use rmw_upnp::rmw_upnp;
+use rmw_upnp::daemon;
 
 #[async_std::main]
 async fn main() -> Result<()> {
@@ -71,7 +71,7 @@ async fn main() -> Result<()> {
 
   let sleep_seconds = 60;
   let port = 12345;
-  rmw_upnp("test_rmw_upnp", port, sleep_seconds).await;
+  daemon("test_rmw_upnp", port, sleep_seconds).await;
   Ok(())
 }
 ```
