@@ -1,6 +1,6 @@
 [package]
 name = "rmw-upnp"
-version = "0.2.1"
+version = "0.2.2"
 edition = "2021"
 authors = ["gcxfd <i@rmw.link>"]
 license = "Apache-2.0"
