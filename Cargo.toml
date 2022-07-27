@@ -1,0 +1,39 @@
+[package]
+name = "upnp_daemon"
+version = "0.0.7"
+edition = "2021"
+authors = ["gcxfd <i@rmw.link>"]
+license = "Apache-2.0"
+description = "upnp_daemon"
+repository = "https://github.com/rmw-lib/upnp_daemon"
+readme = "README.md"
+keywords = ["upnp_daemon"]
+
+[dependencies]
+anyhow = "1.0.58"
+async-std = "1.12.0"
+igd = { package = "igd_async_std", version = "0.12.4", features = ["aio"] }
+log = "0.4.17"
+thiserror = "1.0.31"
+
+#[[bin]]
+# bench = false
+# path = "src/main.rs"
+# name = "upnp_daemon"
+# [profile.release]
+# lto = true
+# codegen-units = 1
+# debug-assertions = false
+# overflow-checks = false
+# opt-level = 3
+# panic = 'abort'
+[features]
+default = []
+
+[dev-dependencies]
+async-std = { version = "1.12.0", features = ["attributes"] }
+fern = "0.6.1"
+# avif = ["dep:ravif", "dep:rgb"]
+#[dependencies.ravif]
+#optional = true
+#version = "0.6.3"
