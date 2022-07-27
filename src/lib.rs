@@ -1,3 +1,5 @@
+// #![feature(const_socketaddr)]
+
 use std::{
   net::{IpAddr, Ipv4Addr, SocketAddrV4, TcpStream},
   time::Duration,
@@ -67,18 +69,18 @@ pub async fn upnp(name: &str, port: u16, duration: u32) -> Result<(SocketAddrV4,
 }
 
 pub trait Watch {
-  fn ok(&self, ip: Ipv4Addr, port: u16, gateway: SocketAddrV4);
+  fn ok(&self, addr: SocketAddrV4, gateway: SocketAddrV4);
   fn err(&self, err: Error);
 }
 
 pub struct Log;
 
 impl Watch for Log {
-  fn ok(&self, ip: Ipv4Addr, port: u16, gateway: SocketAddrV4) {
-    info!("upnp success ( addr {}:{} gateway {})", ip, port, gateway);
+  fn ok(&self, addr: SocketAddrV4, gateway: SocketAddrV4) {
+    info!("upnp {} gateway {}", addr, gateway);
   }
   fn err(&self, err: Error) {
-    info!("upnp error err : {}", err);
+    info!("upnp err : {}", err);
   }
 }
 
@@ -97,11 +99,12 @@ pub async fn daemon_watch(name: &str, port: u16, sleep_seconds: u32, watch: impl
         if ip != local_ip || gateway != pre_gateway {
           local_ip = ip;
           pre_gateway = gateway;
-          watch.ok(ip, port, gateway);
+          watch.ok(SocketAddrV4::new(ip, port), gateway);
         }
       }
       Err(err) => {
-        dbg!(err);
+        local_ip = Ipv4Addr::UNSPECIFIED;
+        watch.err(err);
       }
     }
     sleep(seconds).await;
