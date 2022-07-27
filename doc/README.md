@@ -1,4 +1,4 @@
-<!-- EDIT /Users/z/rmw/upnp_daemon/doc/README.md -->
+<!-- EDIT /Users/z/rmw/rmw_upnp/doc/README.md -->
 
 [English](#english-readme) | [中文说明](#中文说明)
 
@@ -6,7 +6,7 @@
 
 ## English Readme
 
-<!-- EDIT /Users/z/rmw/upnp_daemon/doc/en/readme.md -->
+<!-- EDIT /Users/z/rmw/rmw_upnp/doc/en/readme.md -->
 
 rmw_upnp : upnp port map daemon
 
@@ -38,7 +38,7 @@ async fn main() -> Result<()> {
 
 ## 中文说明
 
-<!-- EDIT /Users/z/rmw/upnp_daemon/doc/zh/readme.md -->
+<!-- EDIT /Users/z/rmw/rmw_upnp/doc/zh/readme.md -->
 
 rmw_upnp : upnp 守护进程
 
