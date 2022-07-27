@@ -1,7 +1,6 @@
 # rmw_upnp
 
 <a href="https://docs.rs/rmw_upnp"><img src="https://img.shields.io/badge/RUST-API%20DOC-blue?style=for-the-badge&logo=docs.rs&labelColor=333" alt="Api Doc"></a>
-<a href="https://github.com/rmw-lib/rmw_upnp/releases"><img src="https://img.shields.io/badge/Download-EXE-090?style=for-the-badge&logo=rust&labelColor=333" alt="Download"></a>
 
 [English](#english-readme) | [中文说明](#中文说明)
 
